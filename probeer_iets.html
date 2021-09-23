@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function beginnen(naam, waarde){
+        var a = iets(naam)
+        console.log("Je heet "+ding+" en je bent "+waarde+" jaar oud.");
+    }
+    function iets(ding){
+        return ding*2
+    }
+    function pas_naam(){
+        var naam = document.getElementById("naam1").value;
+        var uitvoer = document.getElementById("uitvoer");
+        uitvoer.innerHTML = naam
+    }
+
+</script>
+<body>
+    <input id="naam1">
+    <div id="uitvoer">naam</div>
+    <button onclick="pas_naam()">Klik hier</button>
+    <hr><hr>
+    <button onclick="beginnen('Tuanke', 24)">Klik hier</button>
+    <br>
+    <button onclick="beginnen('aap', 5)">Klik niet hier</button>
+</body>
+</html>
