@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function check_letter(){
+        var tekst = document.getElementById("tekstveld").value
+        var check_char = document.getElementById("letter").value
+        var uitvoer = document.getElementById("uitvoer")
+        var teller = 0
+        for(x = 0; x < tekst.length; x++){
+            var letter = tekst[x]
+            if(letter == check_char){
+                teller = teller + 1
+            }
+        uitvoer.innerHTML = "De letter " + check_char + " zit er " + teller + " keer in."
+        }
+    }
+</script>
+<body>
+    <input id="tekstveld">
+    <br>
+    <input id="letter">
+    <br>
+    <button onclick="check_letter()">Check!</button>
+    <br>
+    <div id="uitvoer">...</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function vergelijk() {
+        var woord = document.getElementById("woord").value
+        var getal = parseInt(document.getElementById("woord").value)
+        var uitvoer = document.getElementById("uitvoer")
+
+        if (woord.length > getal) {
+            uitvoer.innerHTML = "past niet"
+        }else{
+            uitvoer.innerHTML = "past"
+        }
+        uitvoer.onclick = extra_functie
+    }
+    function extra_functie() {
+        var deDOM = document.getElementById('html')
+        console.log(deDOM)
+    }
+</script>
+<body>
+    <input id="woord">
+    <input id="getal">
+    <button onclick="vergelijk()">probeer</button>
+    <div id="uitvoer">
+
+</body>
+</html>
