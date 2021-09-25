@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    plain{
+        font-size: large;
+    }
+</style>
+<script>
+    var img_counter = 0
+    function Next_image(){
+        img_counter = img_counter + 1
+        if(img_counter == 4){img_counter = 0}
+
+        file_location = "images/image" + img_counter + ".png"
+        document.getElementById("MyImage").src = file_location
+    }
+</script>
+<body>
+    <h1>Change the picture</h1>
+    <p>This is your image</p>
+    <img id="MyImage" src="images/image0.png" style="width:100px">
+    <button onclick="Next_image()">Next image</button>
+</body>
+</html>

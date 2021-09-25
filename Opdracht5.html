@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .button{
+        border: 2px solid navy;
+        color: black;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: azure;
+        font-size: medium;
+        font-weight: bold;
+        width: 100px;
+    }
+    .button1{
+        background-color: green;
+    }
+    .button2{
+        background-color: blue;
+    }
+    .button3{
+        background-color: red;
+    }
+    .button4{
+        background-color: yellow;
+    }
+    .div{
+        font-size: large;
+    }
+</style>
+<script>
+    var geklikt = [false, false, false, false];
+    var letters = "ABCD"
+    function update_history(letter){
+        var index = letters.search(letter)
+        var tekst = ""
+        if(geklikt[index]){
+            tekst = "Je hebt al op deze knop gedrukt."
+        }else{
+            tekst = "Je hebt op knop " + letter + " gedrukt."
+            geklikt[index] = true
+        }
+        var divje = document.createElement("DIV")
+        divje.innerHTML = tekst
+        document.body.appendChild(divje)
+    }
+</script>
+<body>
+    <button class="button button1" onclick="update_history('A')">A</button>
+    <button class="button button2" onclick="update_history('B')">B</button>
+    <button class="button button3" onclick="update_history('C')">C</button>
+    <button class="button button4" onclick="update_history('D')">D</button>
+</body>
+</html>
