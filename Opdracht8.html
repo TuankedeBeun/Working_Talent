@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    plain{
+        font-size: large;
+    }
+</style>
+<script>
+    var img_counter_left = 0
+    function Next_image(){
+        img_counter_left = img_counter_left + 1
+        if(img_counter_left == 4){img_counter_left = 0}
+
+        file_loc1 = "images/image" + img_counter_left + ".png"
+        document.getElementById("MyImage_left").src = file_loc1
+
+        if(img_counter_left == 2){
+            file_loc2 = "images/galaxy.jpg"
+            document.getElementById("MyImage_right").src = file_loc2
+        }
+        if(img_counter_left == 3){
+            file_loc2 = "images/clouds.jpg"
+            document.getElementById("MyImage_right").src = file_loc2
+        }
+    }
+</script>
+<body>
+    <h1>Click the left picture!</h1>
+    <img id="MyImage_left" src="images/image0.png" width="150px" onclick="Next_image()">
+    <img id="MyImage_right" src="images/clouds.jpg" width="150px" height="150px">
+</body>
+</html>
