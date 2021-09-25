@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    plain{
+        font-size: large;
+    }
+</style>
+<script>
+    var img_counter_left = 0
+    var img_counter_right = 0
+    function Next_image_left(){
+        img_counter_left = img_counter_left + 1
+        if(img_counter_left == 4){img_counter_left = 0}
+
+        file_location = "images/image" + img_counter_left + ".png"
+        document.getElementById("MyImage_left").src = file_location
+    }
+    function Next_image_right(){
+        img_counter_right = img_counter_right + 1
+        if(img_counter_right == 4){img_counter_right = 0}
+
+        file_location = "images/image" + img_counter_right + ".png"
+        document.getElementById("MyImage_right").src = file_location
+    }
+    function compare(){
+        var tekst = ""
+        if (img_counter_left == img_counter_right){
+            tekst = "De afbeeldingen zijn hetzelfde."
+        }else{
+            tekst = "De afbeeldingen zijn verschillend."
+        }
+        var divje = document.getElementById("divje")
+        divje.innerHTML = tekst
+    }
+</script>
+<body>
+    <h1>Compare the pictures</h1>
+    <p>These are your images</p>
+    <img id="MyImage_left" src="images/image0.png" style="width:100px">
+    <img id="MyImage_right" src="images/image0.png" style="width:100px">
+    <br>
+    <button onclick="Next_image_left()">Next image</button>
+    <button onclick="Next_image_right()">Next image</button>
+    <button onclick="compare()">Compare images</button>
+    <br>
+    <div id="divje">...</div>
+</body>
+</html>
